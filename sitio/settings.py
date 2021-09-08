@@ -72,7 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sitio.wsgi.application'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR))
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
