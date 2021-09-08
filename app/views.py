@@ -16,4 +16,4 @@ def index(request):
         if ep1["name"] not in lista:
             lista.append(ep1["name"])
     ciudades["cities"] = lista
-    return render(request, 'templates/app/index.html', ciudades)
+    return render(request, 'app/templates/app/index.html', ciudades)
