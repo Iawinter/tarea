@@ -7,19 +7,13 @@ from requests import get
 #   return HttpResponse("Hello, Antonia Vega.")
 
 def index(request):
-    ciudades= {"cities": [], "usuarios": []}
+    ciudades= {"cities": []}
     r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
     r = r.json()
+    print(r)
     lista = []
     for ep1 in r:
         if ep1["name"] not in lista:
             lista.append(ep1["name"])
     ciudades["cities"] = lista
-    r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/usuarios")
-    r = r.json()
-    lista = []
-    for ep in r:
-        if ep["name"] not in lista:
-            lista.append(ep["name"])
-    ciudades["usuarios"] = lista
     return render(request, 'aplicacion/index.html', ciudades)
