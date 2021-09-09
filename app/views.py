@@ -28,7 +28,7 @@ def ciudades(request, id_ciudad):
     r = r.json()
     for ci in r:
         if ci["id"] == id_ciudad:
-            ciudad["nombre"] = [ci["name"]]
-            ciudad["pais"] = [ci["country"]]
-            ciudad["usuarios"] = [ci["users"]]
+            ciudad["nombre"] = ci["name"]
+            ciudad["pais"] = ci["country"]
+            ciudad["usuarios"] = ci["users"]
     return render(request, 'ciudades.html', ciudad)
