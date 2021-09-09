@@ -30,7 +30,7 @@ def ciudades(request, id_ciudad):
     lista1 = []
     lista2 = []
     for ci in r:
-        if ci["id"] == id_ciudad:
+        if ci["name"] == id_ciudad:
             lista.append(ci["name"])
             lista1.append(ci["country"])
             lista2.append(ci["users"])
