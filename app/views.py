@@ -22,8 +22,8 @@ def index(request):
     ciudades["usuarios"] = lista
     return render(request, 'index.html', ciudades)
 
-def ciudades(request):
-    r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
+def ciudades(request, id_ciudad):
+    r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities/{id_ciudad}")
     r = r.json()
     #r = r[0]
     diccionario = {'nombre': r['name'], 'pais': r['country'], 'usuarios': r['users']}
