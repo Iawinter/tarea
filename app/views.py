@@ -34,7 +34,7 @@ def ciudades(request, id_ciudad):
             lista.append(ci["name"])
             lista1.append(ci["country"])
             lista2.append(ci["users"])
-    dicc["nombre"] = lista
-    dicc["pais"] = lista1
-    dicc["usuarios"] = lista2
+    dicc["nombre"] = lista[0]
+    dicc["pais"] = lista1[0]
+    dicc["usuarios"] = lista2[0]
     return render(request, 'ciudades.html', dicc)
