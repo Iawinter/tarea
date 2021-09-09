@@ -23,8 +23,12 @@ def index(request):
     return render(request, 'index.html', ciudades)
 
 def ciudades(request, id_ciudad):
-    r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities/{id_ciudad}")
+    ciudad = {'nombre': [], 'pais': [], 'usuarios': []}
+    r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
     r = r.json()
-    #r = r[0]
-    diccionario = {'nombre': r['name'], 'pais': r['country'], 'usuarios': r['users']}
-    return render(request, 'ciudades.html', diccionario)
+    for ci in r:
+        if ci["id"] == id_ciudad:
+            ciudad["nombre"] = [ci["name"]]
+            ciudad["pais"] = [ci["country"]]
+            ciudad["usuarios"] = [ci["users"]]
+    return render(request, 'ciudades.html', ciudad)
