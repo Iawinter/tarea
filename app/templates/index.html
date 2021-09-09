@@ -12,7 +12,11 @@
 
 <h1>Ciudades</h1>
 
-
+<ul>
+  {% for ciu in cities %}
+  <li><a href="/ciudades/{{ ciu }}/">Ciudad {{ciu}}</a></li>
+  {% endfor %}
+</ul>
 
 <h1>Usuarios</h1>
 
