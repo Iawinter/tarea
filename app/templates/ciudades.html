@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tarea 1</title>
+</head>
+<body>
+
+  <form action="/app/busqueda" method="get">
+    <input type="text" name="busqueda"/>
+    <button type="submit">Buscar</button>
+  </form>
+
+<h1> {{nombre}} </h1>
+
+<p> Pais: {{pais}} </p>
+
+<p> Usuarios: </p>
+
+<ul>
+  {% for us in usuarios %}
+  <li><a href='/usuarios/{{us}}/'> {{per}} </a></li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
