@@ -16,7 +16,7 @@ def index(request):
         if ep1["name"] not in lista:
             lista.append(ep1["name"])
     ciudades["cities"] = lista
-    r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/usuarios")
+    r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/users")
     r = r.json()
     lista = []
     for ep in r:
