@@ -23,8 +23,8 @@ def index(request):
     return render(request, 'index.html', ciudades)
 
 def ciudades(request, id_ciudad):
-    ciudad = {'nombre': [], 'pais': [], 'usuarios': []}
-    r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
+    dicc = {'nombre': [], 'pais': [], 'usuarios': []}
+    r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
     r = r.json()
     lista = []
     lista1 = []
@@ -34,7 +34,7 @@ def ciudades(request, id_ciudad):
             lista.append(ci["name"])
             lista1.append(ci["country"])
             lista2.append(ci["users"])
-    ciudad["nombre"] = lista
-    ciudad["pais"] = lista1
-    ciudad["usuarios"] = lista2
-    return render(request, 'ciudades.html', ciudad)
+    dicc["nombre"] = lista
+    dicc["pais"] = lista1
+    dicc["usuarios"] = lista2
+    return render(request, 'ciudades.html', dicc)
