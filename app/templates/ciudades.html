@@ -10,7 +10,11 @@
     <button type="submit">Buscar</button>
   </form>
 
-<h1> {{nombre}} </h1>
+  <ul>
+    {% for n in nombre %}
+    <li>>{{n}}</li>
+    {% endfor %}
+  </ul>
 
 <p> Pais: {{pais}} </p>
 
