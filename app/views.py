@@ -83,8 +83,15 @@ def busqueda(request):
         busqueda = request.GET.get('busqueda')
         r = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities?q={busqueda}")
         r = r.json()
+        g = get(f"https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/users?q={busqueda}")
+        g = g.json()
         lista = []
+        lista2 = []
         for ep1 in r:
             if ep1["name"] not in lista:
                 lista.append(ep1["name"])
-        return render(request, 'busqueda.html', {'resultado': lista, 'busqueda': busqueda})
+        for ep in g:
+            if ep["name"] not in lista:
+                a = ep["name"] + " " + ep["lastName"]
+                lista2.append(a)
+        return render(request, 'busqueda.html', {'resultado': lista, 'resultado2': lista2, 'busqueda': busqueda})
