@@ -77,3 +77,18 @@ def usuarios(request, id_usuario):
             diccionario = {'nombre': z, 'foto': user['avatar'], 'mail': user['email'], 'credito': lista,
                            "direcciones": lista2}
     return render(request, 'usuarios.html', diccionario)
+
+def busqueda(request):
+    if request.method == 'GET':
+        busqueda = request.GET.get('busqueda')
+        r = get("https://us-central1-taller-integracion-310700.cloudfunctions.net/tarea-1-2021-2/26425/cities")
+        r = r.json()
+        lista = []
+        resultado = []
+        for ep1 in r:
+            if ep1["name"] not in lista:
+                lista.append(ep1["name"])
+        for i in lista:
+            if busqueda == i:
+                resultado.append(i)
+        return render(request, 'busqueda.html', {'resultado': resultado, 'busqueda': busqueda})
