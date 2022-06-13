@@ -44,8 +44,12 @@ Capas de Salida
 
 1. ¿Cual es el largo en bytes del HTTP Request del paquete HTTP?
 
+* El HTTP Request del paquete HTTP tiene un largo de 32 bytes.
 
 2. Describa que tipos de paquetes se estan usando, es decir, decir que tipo de paquete son, por que se usan estos paquetes y que deben contener.
 
+* Se estan utilizando, en primer lugar, paquetes DNS, que sirven para traducir los nombres de dominio a la direccion IP del servidor donde esta la pagina a la que queremos acceder. Estos paquetes deben contener el nombre de la pagina web a la que se esta tratando de acceder, el IP de destino, el Time to Live, class y type. También se utiliza el Adress Resolution Protocol (ARP) que cumple la funcion de establecer una correspondencia entre la direccion IP y la direccion MAC (De esto ultimo no estoy seguro porque me aparecio solo en una sola simulacion). Por ultimo, se utiliza el paquete HTTP, que se manda primero con un HTTP Request y luego con un HTTP Response. El HTTP Request, enviadas por el cliente al servidor, se utilizan para pedir el inicio de una acción y contienen el metodo que describe la accion, los headers, una empty line y el body. El HTTP Response, que es la respuesta del servidor, tiene una estructura similar al Request, pero en la linea de inicio describe si la peticion tuvo exito o fracaso.  
 
 3. Describa de forma ordenada que rutas toman los paquetes descritos en la pregunta anterior (especificar por donde pasan y en que orden).
+
+* En primer lugar se envia un DNS desde la Laptop de la red Casa Manolito hacia el Router de la Casa, el cual a su vez envia el DNS hacia el Router Gateaway de esta red. Luego lleva este paquete a la Router Central. El paquete sigue el camino hacia el Router Gateaway de la red DNS para finalmente llegar al Server DNS. El paquete DNS hace el mismo camino de vuelta hacia el Laptop de la red Casa Manolito, llegando exitosamente. (Server DNS -> Router Gateaway red DNS -> Router Central -> Router Gateaway red Casa Manolito -> Router red Casa Manolito -> Laptop). Al llegar exitosamente el DNS al Laptop, este ultimo manda un HTTP Request al Server de la red Disney+, el cual hace el siguiente camino: Laptop red casa Manolito -> Router red Casa Manolito -> Router Gateaway red Casa Manolito -> Router Central -> Router Gateaway red Disney+ -> Server Disney+. El Server de Disney+, a su vez, envía un HTTP Response de vuelta al Latop siguiendo el camino exactamente en orden inverso. 
