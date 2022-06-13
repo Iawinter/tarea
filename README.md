@@ -11,12 +11,15 @@ Ignacio Winter - 17642329
 ### Parte 1: paquete Simple PDU
 
 1. ¿Cual es el largo en bits de la direccion IP de destino?
+
 *La direccion IP de destino, que corresponde a 200.0.0.2, tiene un largo de 32 bits.
 
 2. ¿Cual es la direccion IP de origen cuando el paquete se encuentra en el router central y el ultimo dispositivo visitado es el router gateway de la red Casa Manolito?
+
 *La direccion Ip de origen en la situacion descrita corresponde a la 111.11.11.2 
 
 3. ¿Cual es la direccion IP de origen cuando el paquete se encuentra en el router central y el ultimo dispositivo visitado es el router gateway de la red DNS?
+
 *La direccion Ip de origen en la situacion descrita corresponde a la 200.0.0.2
 
 4. Describa, en orden y separado por capas de entrada y salida, todo lo que ocurre con el paquete cuando este se encuentra en el servidor de la red DNS y el ultimo dispositivo visitado es el router gateway de la red DNS.
