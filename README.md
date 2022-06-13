@@ -16,11 +16,11 @@ Ignacio Winter - 17642329
 
 2. ¿Cual es la direccion IP de origen cuando el paquete se encuentra en el router central y el ultimo dispositivo visitado es el router gateway de la red Casa Manolito?
 
-* La direccion Ip de origen en la situacion descrita corresponde a la 111.11.11.2 
+* La direccion IP de origen en la situacion descrita corresponde a la 111.11.11.2 
 
 3. ¿Cual es la direccion IP de origen cuando el paquete se encuentra en el router central y el ultimo dispositivo visitado es el router gateway de la red DNS?
 
-* La direccion Ip de origen en la situacion descrita corresponde a la 200.0.0.2
+* La direccion IP de origen en la situacion descrita corresponde a la 200.0.0.2
 
 4. Describa, en orden y separado por capas de entrada y salida, todo lo que ocurre con el paquete cuando este se encuentra en el servidor de la red DNS y el ultimo dispositivo visitado es el router gateway de la red DNS.
 
@@ -41,3 +41,11 @@ Capas de Salida
 * Layer 3: El proceso ICMP responde a la "Echo Request" ajustando la la respuesta al tipo ICMP. Luego manda la respuesta. La direccion de destino 111.11.11.2 no es la misma sub red y no es la direccion de broadcast, por lo que el dispositivo establece el "default gateway" para el Next Hop.
 
 ### Parte 2
+
+1. ¿Cual es el largo en bytes del HTTP Request del paquete HTTP?
+
+
+2. Describa que tipos de paquetes se estan usando, es decir, decir que tipo de paquete son, por que se usan estos paquetes y que deben contener.
+
+
+3. Describa de forma ordenada que rutas toman los paquetes descritos en la pregunta anterior (especificar por donde pasan y en que orden).
